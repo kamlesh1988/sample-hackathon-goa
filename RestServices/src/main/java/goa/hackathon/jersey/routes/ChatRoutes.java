@@ -1,4 +1,4 @@
-package goa.hackathon.jersey;
+package goa.hackathon.jersey.routes;
 
 import java.io.InputStream;
 
@@ -18,7 +18,7 @@ import goa.hackathon.jersey.service.TestService;
  * Root resource (exposed at "myresource" path)
  */
 @Path("myresource")
-public class MyResource {
+public class ChatRoutes {
 
 	@Inject
 	TestService service;

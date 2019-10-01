@@ -17,7 +17,7 @@ import goa.hackathon.jersey.service.TestService;
 /**
  * Root resource (exposed at "myresource" path)
  */
-@Path("/chat/")
+@Path("/api/group/msg")
 public class ChatMessagingRoute {
 
 	@Inject
