@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Group Messaging</string>
+    <string name="title_activity_entry">EntryActivity</string>
+    <string name="title_activity_chat">ChatActivity</string>
 </resources>
