@@ -13,7 +13,7 @@ import goa.hackathon.jersey.di.DependencyResolver;
 import goa.hackathon.jersey.di.MyDiscoverableFeature;
 
 public class Main {
-	public static final String		BASE_URI				= "http://0.0.0.0:8080/chat-application";
+	public static final String		BASE_URI				= "http://0.0.0.0:18080/chat-application";
 	public static final String		SERVICE_LOCATOR_NAME	= null;
 	private static ServiceLocator	locator;
 

@@ -99,7 +99,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20190722</version>
+			<version>${org.json.version}</version>
 		</dependency>
 
 		<dependency>
