@@ -1,6 +1,7 @@
 package goa.hackathon.jersey;
 
 import javax.inject.Inject;
+import javax.ws.rs.ApplicationPath;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,6 +20,7 @@ import goa.hackathon.jersey.di.DependencyResolver;
  * Main class.
  *
  */
+@ApplicationPath("/")
 public class SampleApplication extends ResourceConfig {
 
 	private static final Logger log = LogManager.getLogger();
