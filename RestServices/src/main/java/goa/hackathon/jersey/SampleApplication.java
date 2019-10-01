@@ -8,9 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.glassfish.hk2.api.ActiveDescriptor;
 import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.hk2.utilities.ServiceLocatorUtilities;
-import org.glassfish.jersey.message.internal.TracingLogger;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.glassfish.jersey.server.ServerProperties;
 
 import com.google.gson.stream.JsonReader;
 
@@ -20,35 +18,35 @@ import goa.hackathon.jersey.di.DependencyResolver;
  * Main class.
  *
  */
-@ApplicationPath("/")
+@ApplicationPath("/api")
 public class SampleApplication extends ResourceConfig {
 
 	private static final Logger log = LogManager.getLogger();
 	// Base URI the Grizzly HTTP server will listen on
-	public static final String	PACKAGE_NAME			= Main.class.getPackage().getName();
+	public static final String	PACKAGE_NAME			= "goa.hackathon";
 	public static final String	SERVICE_LOCATOR_NAME	= "__HK2_Generated_0";
 
 	private ServiceLocator sl;
 
 	@Inject
 	public SampleApplication(ServiceLocator serviceLocator) {
-		System.out.println("SMS-AI Application Initialized");
+		System.out.println("GOA HACKATHON Application Initialized");
 		sl = serviceLocator;
 		register(org.glassfish.jersey.media.multipart.MultiPartFeature.class);
 		registerServices(serviceLocator);
 		//		MetricsRegistryService metricsRegistryService = serviceLocator.getService(MetricsRegistryService.class);
 		//		register(new InstrumentedResourceMethodApplicationListener(metricsRegistryService.getMetricRegistry()));
-
 		packages(PACKAGE_NAME);
+		registerRoutes();
 		//		Config config = sl.getService(Config.class);
-		property(ServerProperties.MONITORING_STATISTICS_ENABLED, true);
-		property(ServerProperties.TRACING_THRESHOLD, TracingLogger.Level.SUMMARY.name());
+		//		property(ServerProperties.MONITORING_STATISTICS_ENABLED, true);
+		//		property(ServerProperties.TRACING_THRESHOLD, TracingLogger.Level.SUMMARY.name());
 		//		if ("dev".equalsIgnoreCase(config.getEnv())) {
 		//			property(ServerProperties.TRACING, TracingConfig.ALL.name());
 		//		} else {
 		//			property(ServerProperties.TRACING, TracingConfig.ON_DEMAND.name());
 		//		}
-		property(ServerProperties.WADL_FEATURE_DISABLE, true);
+		//		property(ServerProperties.WADL_FEATURE_DISABLE, true);
 		//		registerRoutes();
 		initializeErrorHandlers();
 		//		NotificationProvider notificationProvider = ServiceDependencyResolver.getDependency(NotificationProvider.class);
