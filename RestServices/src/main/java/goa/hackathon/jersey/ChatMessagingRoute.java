@@ -1,24 +1,24 @@
-package com.kamlesh.poc.jersey;
+package goa.hackathon.jersey;
+
+import java.io.InputStream;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.kamlesh.poc.jersey.service.TestService;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
-import java.io.InputStream;
+import com.kamlesh.poc.jersey.service.TestService;
 
 /**
  * Root resource (exposed at "myresource" path)
  */
-@Path("myresource")
-public class MyResource {
+@Path("/chat/")
+public class ChatMessagingRoute {
 
 	@Inject
 	TestService service;

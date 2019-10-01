@@ -1,4 +1,4 @@
-package com.kamlesh.poc.jersey.di;
+package goa.hackathon.jersey.di;
 
 import javax.inject.Inject;
 

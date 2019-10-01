@@ -1,4 +1,4 @@
-package com.kamlesh.poc.jersey.di;
+package goa.hackathon.jersey.di;
 
 import java.io.IOException;
 
@@ -14,10 +14,11 @@ import org.glassfish.hk2.utilities.DuplicatePostProcessor;
 import org.glassfish.hk2.utilities.ServiceLocatorUtilities;
 
 import gov.va.oia.HK2Utilities.HK2RuntimeInitializer;
-import com.kamlesh.poc.jersey.Main;
 import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import goa.hackathon.jersey.Main;
 
 @Log4j2
 public class MyDiscoverableFeature implements Feature {

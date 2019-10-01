@@ -1,16 +1,17 @@
-package com.kamlesh.poc.jersey.service;
+package goa.hackathon.jersey.service;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.inject.Inject;
 
-import com.kamlesh.poc.jersey.di.MyDiscoverableFeature;
 import org.jvnet.hk2.annotations.Service;
 
-import com.kamlesh.poc.jersey.di.DependencyResolver;
 import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import goa.hackathon.jersey.di.DependencyResolver;
+import goa.hackathon.jersey.di.MyDiscoverableFeature;
 
 @Service
 @Log4j2

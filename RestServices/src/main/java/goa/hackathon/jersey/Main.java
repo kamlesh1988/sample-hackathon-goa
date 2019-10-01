@@ -1,4 +1,4 @@
-package com.kamlesh.poc.jersey;
+package goa.hackathon.jersey;
 
 import java.io.IOException;
 import java.net.URI;
@@ -10,9 +10,10 @@ import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 
-import com.kamlesh.poc.jersey.di.DependencyResolver;
-import com.kamlesh.poc.jersey.di.MyDiscoverableFeature;
 import com.kamlesh.poc.jersey.service.TestService;
+
+import goa.hackathon.jersey.di.DependencyResolver;
+import goa.hackathon.jersey.di.MyDiscoverableFeature;
 import lombok.extern.log4j.Log4j2;
 
 /**

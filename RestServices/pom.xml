@@ -4,9 +4,9 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.kamlesh.poc</groupId>
+	<groupId>goa.hackathon</groupId>
 	<artifactId>SampleJerseyProject</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SampleJerseyProject</name>
 
@@ -21,7 +21,31 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+	<repositories>
+		<repository>
+			<id>gupshup-internal</id>
+			<name>Gupshup Internal</name>
+			<url>http://nexus.gupshup.tech/repository/maven-public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>gupshup-nexus</id>
+			<name>Snapshots</name>
+			<url>http://nexus.gupshup.tech/repository/maven-snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>gupshup-nexus</id>
+			<name>Releases</name>
+			<url>http://nexus.gupshup.tech/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
@@ -82,12 +106,26 @@
 	</dependencies>
 
 	<build>
+		<finalName>chat-application</finalName>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.7.0</version>
-				<inherited>true</inherited>
+				<version>3.3</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
