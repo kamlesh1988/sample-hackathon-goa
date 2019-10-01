@@ -14,18 +14,18 @@ import io.gupshup.db.connection.ConnectionPool;
 import io.gupshup.db.connection.impl.HikariConnectionPool;
 import io.gupshup.wpp.Configurator;
 
-public class HsqlDataStore implements ConnectionPool
+public class HsqlDataSource implements ConnectionPool
 {
 
 	private static final Logger log = LogManager.getLogger();
 
 	private static final String COM_MYSQL_JDBC_DRIVER = "org.hsqldb.jdbc.JDBCDriver";
 
-	public static HsqlDataStore connectionManager;
+	public static HsqlDataSource connectionManager;
 
 	private static HikariConnectionPool hikariConnectionPool;
 
-	private HsqlDataStore()
+	private HsqlDataSource()
 	{
 		init();
 	}
@@ -59,15 +59,15 @@ public class HsqlDataStore implements ConnectionPool
 		hikariConnectionPool = new HikariConnectionPool(config);
 	}
 
-	public static HsqlDataStore getInstance()
+	public static HsqlDataSource getInstance()
 	{
 		if (connectionManager == null)
 		{
-			synchronized (HsqlDataStore.class)
+			synchronized (HsqlDataSource.class)
 			{
 				if (connectionManager == null)
 				{
-					connectionManager = new HsqlDataStore();
+					connectionManager = new HsqlDataSource();
 				}
 			}
 		}

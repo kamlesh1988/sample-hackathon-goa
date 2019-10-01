@@ -14,18 +14,18 @@ import io.gupshup.db.connection.ConnectionPool;
 import io.gupshup.db.connection.impl.HikariConnectionPool;
 import io.gupshup.wpp.Configurator;
 
-public class PooledDataSource implements ConnectionPool
+public class MysqlDataSource implements ConnectionPool
 {
 
 	private static final Logger log = LogManager.getLogger();
 
 	private static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
 
-	public static PooledDataSource connectionManager;
+	public static MysqlDataSource connectionManager;
 
 	private static HikariConnectionPool hikariConnectionPool;
 
-	private PooledDataSource()
+	private MysqlDataSource()
 	{
 		init();
 	}
@@ -59,15 +59,15 @@ public class PooledDataSource implements ConnectionPool
 		hikariConnectionPool = new HikariConnectionPool(config);
 	}
 
-	public static PooledDataSource getInstance()
+	public static MysqlDataSource getInstance()
 	{
 		if (connectionManager == null)
 		{
-			synchronized (PooledDataSource.class)
+			synchronized (MysqlDataSource.class)
 			{
 				if (connectionManager == null)
 				{
-					connectionManager = new PooledDataSource();
+					connectionManager = new MysqlDataSource();
 				}
 			}
 		}

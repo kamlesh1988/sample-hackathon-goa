@@ -4,7 +4,7 @@ import org.json.JSONObject;
 
 public interface DataStoreInterface
 {
-	JSONObject getData();
+	JSONObject getData(int id);
 
 	boolean postData(JSONObject json);
 }
