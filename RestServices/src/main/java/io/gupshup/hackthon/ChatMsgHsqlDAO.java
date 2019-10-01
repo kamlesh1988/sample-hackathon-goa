@@ -1,5 +1,6 @@
 package io.gupshup.hackthon;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.json.JSONArray;
@@ -18,7 +19,44 @@ public class ChatMsgHsqlDAO extends AbstractGenericDao<Integer, ChatMsgObject> i
 	}
 
 	@Override
-	public JSONObject getData(int id)
+	public List<ChatMsgObject> getData(int id) throws SQLException
+	{
+		return getList("id > ?", id);
+	}
+
+	@Override
+	public boolean postData(ChatMsgObject object)
+	{
+		try
+		{
+			save(object);
+			return true;
+		}
+		catch (Exception e)
+		{
+			return false;
+		}
+	}
+
+	public boolean postDataFromUI(JSONObject json)
+	{
+		boolean ret = false;
+		try
+		{
+			Gson gson = new Gson();
+			ChatMsgObject object = gson.fromJson(json.toString(), ChatMsgObject.class);
+			save(object);
+			ret = true;
+		}
+		catch (Exception e)
+		{
+			ret = false;
+		}
+
+		return ret;
+	}
+
+	public JSONObject getDataForUI(int id)
 	{
 		JSONObject returnObject = new JSONObject();
 		try
@@ -44,25 +82,6 @@ public class ChatMsgHsqlDAO extends AbstractGenericDao<Integer, ChatMsgObject> i
 		}
 		return returnObject;
 
-	}
-
-	@Override
-	public boolean postData(JSONObject json)
-	{
-		boolean ret = false;
-		try
-		{
-			Gson gson = new Gson();
-			ChatMsgObject object = gson.fromJson(json.toString(), ChatMsgObject.class);
-			save(object);
-			ret = true;
-		}
-		catch (Exception e)
-		{
-			ret = false;
-		}
-
-		return ret;
 	}
 
 }
