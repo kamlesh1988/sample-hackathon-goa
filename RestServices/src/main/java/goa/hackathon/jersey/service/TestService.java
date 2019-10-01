@@ -5,13 +5,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.inject.Inject;
 
 import org.jvnet.hk2.annotations.Service;
-
-import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import goa.hackathon.jersey.di.DependencyResolver;
 import goa.hackathon.jersey.di.MyDiscoverableFeature;
+import lombok.extern.log4j.Log4j2;
 
 @Service
 @Log4j2

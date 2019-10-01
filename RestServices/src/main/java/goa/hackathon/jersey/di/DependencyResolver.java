@@ -4,10 +4,10 @@ import javax.inject.Inject;
 
 import org.glassfish.hk2.api.ServiceLocator;
 import org.jvnet.hk2.annotations.Service;
-
-import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 @Service

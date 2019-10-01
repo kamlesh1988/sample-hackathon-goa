@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.glassfish.jersey.media.multipart.FormDataParam;
 
-import com.kamlesh.poc.jersey.service.TestService;
+import goa.hackathon.jersey.service.TestService;
 
 /**
  * Root resource (exposed at "myresource" path)

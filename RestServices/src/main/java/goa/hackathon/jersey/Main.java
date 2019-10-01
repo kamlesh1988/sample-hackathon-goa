@@ -10,10 +10,9 @@ import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 
-import com.kamlesh.poc.jersey.service.TestService;
-
 import goa.hackathon.jersey.di.DependencyResolver;
 import goa.hackathon.jersey.di.MyDiscoverableFeature;
+import goa.hackathon.jersey.service.TestService;
 import lombok.extern.log4j.Log4j2;
 
 /**

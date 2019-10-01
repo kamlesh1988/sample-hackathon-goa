@@ -12,13 +12,12 @@ import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.hk2.utilities.ClasspathDescriptorFileFinder;
 import org.glassfish.hk2.utilities.DuplicatePostProcessor;
 import org.glassfish.hk2.utilities.ServiceLocatorUtilities;
-
-import gov.va.oia.HK2Utilities.HK2RuntimeInitializer;
-import lombok.extern.log4j.Log4j2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import goa.hackathon.jersey.Main;
+import gov.va.oia.HK2Utilities.HK2RuntimeInitializer;
+import lombok.extern.log4j.Log4j2;
 
 @Log4j2
 public class MyDiscoverableFeature implements Feature {
