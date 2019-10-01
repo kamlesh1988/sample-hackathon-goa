@@ -18,7 +18,7 @@ import goa.hackathon.jersey.di.DependencyResolver;
  * Main class.
  *
  */
-@ApplicationPath("/api")
+@ApplicationPath("/")
 public class SampleApplication extends ResourceConfig {
 
 	private static final Logger log = LogManager.getLogger();
@@ -85,6 +85,7 @@ public class SampleApplication extends ResourceConfig {
 
 		register(DependencyResolver.createDefaultServiceLocator(serviceLocator.getName()));
 		register(JsonReader.class);
+
 
 		//		register(AppListener.class);
 	}

@@ -52,7 +52,7 @@ public class DependencyResolver implements ContainerLifecycleListener {
 	}
 
 	public synchronized static ServiceLocator createDefaultServiceLocator(String name) {
-		String[] packageNames = { "io.gupshup.smsai" };
+		String[] packageNames = { "goa.hackathon" };
 		try {
 			return HK2RuntimeInitializer.init(name, true, packageNames);
 		} catch (ClassNotFoundException | IOException e) {
